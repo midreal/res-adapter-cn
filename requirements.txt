@@ -1,0 +1,12 @@
+torch
+torchvision
+diffusers
+transformers
+opencv-python
+omegaconf
+tqdm
+numpy
+safetensors
+gradio==4.8.0
+peft
+httpx=0.23.3

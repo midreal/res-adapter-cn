@@ -1,0 +1,40 @@
+task: "controlnet"
+sub_task: "image_to_image"
+experiment_name: ""
+
+
+# Model Configs
+diffusion_model: "/path/to/stable-diffusion-xl-base-1.0"
+model_type: "sdxl"
+controlnet_model: "/path/to/controlnet-canny-sdxl-1.0"
+res_adapter_model: "models/res_adapter/resadapter_v1_sdxl"
+res_adapter_alpha: 1.0
+
+
+# Inference Configs
+width: null
+height: null
+scale_ratio: 0.6  # scale the original image
+
+num_inference_steps: 25
+guidance_scale: 7.5
+num_images_per_prompt: 8
+
+source_images: [
+  "assets/controlnet/man.png",
+]
+
+prompts: [
+  "man",
+]
+
+n_prompt: "lowres, bad anatomy, worst quality, low quality"
+
+
+# Other Configs
+enable_xformers: true
+enable_compare: true
+draw_text: false
+seed: 42
+device: 0
+split_images: true

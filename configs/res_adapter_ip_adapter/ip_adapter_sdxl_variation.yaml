@@ -1,0 +1,39 @@
+task: "ip_adapter"
+sub_task: "image_variation"
+experiment_name: ""
+
+# Model Configs
+diffusion_model: "/path/to/model"
+model_type: "sdxl"
+ip_adapter_model: "/path/to/model"
+ip_adapter_weight_name: "general"
+ip_adapter_scale: 1.0
+res_adapter_model: "/path/to/model"
+res_adapter_alpha: 1.0
+
+# Inference Configs
+width: 384
+height: 384
+scale_ratio: null  # scale the original image
+
+num_inference_steps: 25
+guidance_scale: 7.5
+num_images_per_prompt: 4
+
+ip_adapter_images: [
+  "assets/ip_adapter/watercolor_painting.jpeg",
+]
+
+prompts: [
+  "best quality, high quality",
+]
+
+n_prompt: "monochrome, lowres, bad anatomy, worst quality, low quality"
+
+# Other Configs
+enable_xformers: false  # Must false for ip-adapter, otherwise error occurs...
+enable_compare: true
+draw_text: true
+seed: 42
+device: 0
+split_images: false

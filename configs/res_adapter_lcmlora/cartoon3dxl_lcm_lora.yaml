@@ -1,0 +1,31 @@
+task: "t2i_accelerate"
+experiment_name: ""
+
+# Model Configs
+diffusion_model: "/path/to/cartoon3dxl"
+model_type: "sdxl"
+res_adapter_model: "models/res_adapter/resadapter_v1_sdxl"
+res_adapter_alpha: 1.0
+lcm_lora_path: "/path/to/lcm-sdxl-lora"
+lcm_lora_alpha: 1.0
+
+# Inference Configs
+width: 256
+height: 256
+num_inference_steps: 4
+guidance_scale: 1
+num_images_per_prompt: 8
+
+prompts: [
+  "cutie-pie cat wearing mittens, contrapposto, strong polar filter, evening light, hyper realistic <lora:zhibi:0.75>, zhibi, zdyna_pose, foreshortening, from below,  nicely detailed, portrait by john Wilhelm, <lora:!action-sdxl-V0.5:0.75> <lora:Gerald_Brom_XL_-_Dark_Fantasy_Art:1> art by Gerald Brom",
+  ]
+
+n_prompt: "bad quality, ugly, deformed, disfigured, extra limbs, extra fingers, low quality, extra characters, (disney logo, pixar logo, disney wordmark:1.25) (nipples:1.2), (eye contact, looking at you, looking at the camera:1.2), (mad, angry:1.2)"
+
+# Other Configs
+enable_xformers: true
+enable_compare: true
+draw_text: true
+seed: 42
+device: 0
+split_images: false
